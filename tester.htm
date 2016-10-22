@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html style="background:#9e9e9e;">
+	<head>
+		<style>
+			#a{color:#eaedff;}#a[href="#"]{visibility:hidden;}
+			#textarea{width:calc(100% - 5px);min-height:480px;}
+			#button{border:2px solid #e8e8e8;margin:4px 0;padding:3px 10px;}
+			#text{opacity:0;border:1px solid #fff;padding:4px 6px;margin:4px 0 0 0;}
+			#text:focus{opacity:1;}
+		</style>
+		<script>
+				function f(x){
+				 let b;
+				 const e=x,a=(b=e.previousElementSibling).previousElementSibling;
+				 a.href="javascript:"+b.value;
+				 a.innerHTML=(b=e.nextElementSibling).value;
+				 b.value="";
+				}
+		</script>
+	</head>
+	<body>
+		<a id="a" href="#">?</a>
+		<textarea id="textarea" wrap="soft"></textarea>
+		<input type="button" id="button" value="UPDATE" onclick="f(this)">
+		<input type="text" id="text" value="?">
+	</body>
+</html>
