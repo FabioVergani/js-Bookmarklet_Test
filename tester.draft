@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>BMT</title>
+	<style>
+	 *{box-sizing:border-box;vertical-align:top;}
+	 html{background:#9e9e9e;-webkit-user-select:none;}
+	 html,body{margin:0;padding:0;}
+	 textarea{width:100%;min-height:60vh;overflow-x:hidden;resize:vertical;white-space:pre;background:#FEFFC6;color:#4E1B1B;border:1px solid #878850;}
+
+	 textarea,input{padding:4px 7px;}
+
+
+
+	 textarea::-webkit-input-placeholder{color:#E0D9A3;}
+	 textarea:focus::-webkit-input-placeholder{visibility:hidden;}
+	</style>
+ </head>
+ <body>
+
+	<textarea placeholder="void(function($){'use strict';&#10;&#x20;const&nbsp;o=$,p='BookmarkletId';&#10;&#x20;(o[p]||(o[p]=(function($){&#10;&#9;const&nbsp;w=$,d=w.document;&#10;&#9;return&nbsp;('dolast',function(){});&#10;&#x20;})(o)))(o);&#10;}(window));"></textarea>
+	<button>ADD</button><button>UPDATE</button><input type="text"/><a>?</a>
+
+
+<!--
+&#10;&#9;
+&#10;&#x20;
+
+ASCII space (&#x0020;) or &#32;  &#x20;
+ASCII tab (&#x0009;)
+ASCII form feed (&#x000C;)
+Zero-width space (&#x200B;)
+
+&NewLine;
+&#x0000A;
+&#10;
+
+&Tab;
+&#x00009;
+&#9;
+ a carriage return (&#x000D;), a line feed (&#x000A;),
+white-space: pre;
+placeholder="ssss"
+
+
+&nbsp; &NonBreakingSpace;
+&#x000A0;
+&#160;
+
+
+-->
+	<script>
+
+	</script>
+ </body>
+</html>
