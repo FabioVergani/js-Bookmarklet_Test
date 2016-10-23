@@ -36,27 +36,40 @@
 		<input type="checkbox" id="wrap-function" title="Wrap-function">
 	</p>
 	<textarea id="code" placeholder="void(function($){'use strict';&#10;&#x20;const&nbsp;o=$,p='BookmarkletId';&#10;&#x20;(o[p]||(o[p]=(function($){&#10;&#9;const&nbsp;w=$,d=w.document;&#10;&#9;return&nbsp;('dolast',function(){});&#10;&#x20;})(o)))(o);&#10;}(window));"></textarea>
-	<button id="add">+</button><button id="update">SET</button><input type="text" id="nome" /><a></a>
-	<ul id="stored">
-		<!--<li><a href="#ss">sass</a></li>-->
-	</ul>
+	<button id="add">+</button><button id="update">SET</button><input type="text" id="nome" /><a></a><ul id="stored"></ul>
 	<script>
 			(function($){
 			 let e=$.document.body.children, j=0;
-			 const $options=e[1],$code=e[2],$add=e[3],$update=e[4],$nome=e[5],$a=e[6],$mem=e[7];
+			 const $options=e[1],$code=e[2],$add=e[3],$update=e[4],$nome=e[5],$a=e[6],$ul=e[7];
+			 e=null;
 
 			 $code.ischanged=false;
 			 $code.onchange=function(){this.ischanged=true;};
 
 			 $update.onclick=function(){
-				const a=$a,c=$code,s=c.value;
+				const a=$a,c=$code;
+				let s=c.value;
 				if(s){
-				 if(c.ischanged){a.href=s;++j;c.ischanged=false;};
-				 a.innerHTML=('<b>'+j+'</b>'+($nome.value||'test'));
+				 let k=c.ischanged;
+				 if(k){
+					a.href=s;++j;c.ischanged=a.ismemorized=false;
+				 };
+				 s=$nome.value||'test';
+				 if(k||(s!==a.nome)){
+					a.innerHTML=('<b>'+j+'</b>'+(a.nome=s));
+					a.ismemorized=false;
+				 };
 				};
 			 };
 
-
+			 $add.onclick=function(){
+				const a=$a;
+				if(a.ismemorized!==true){
+				 $ul.innerHTML+=('<li>'+a.outerHTML+'</li>');
+				 a.ismemorized=true;
+				 a.innerHTML=a.href='';
+				};
+			 };
 
 
 
